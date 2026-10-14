@@ -12,6 +12,9 @@ permissions: {}
 jobs:
   analysis:
     name: Scorecard analysis
+    # Scorecard reads the repository through the GraphQL API, which the
+    # workflow token cannot do for a private repository.
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,8 +29,7 @@ jobs:
         with:
           results_file: results.sarif
           results_format: sarif
-          # Results are published to the OpenSSF API only for a public repository.
-          publish_results: ${{ !github.event.repository.private }}
+          publish_results: true
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: scorecard
