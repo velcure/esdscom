@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# The vendored schema stays byte-identical to the upstream release.
+schema/** -text

@@ -1,0 +1,23 @@
+eSDScom XML schema, release v5.5
+
+Source:   https://github.com/esdscom/sdscom-xml
+Release:  tag v5.5 (commit 485d756c70ea43c41684843a934cec5772f9e4de)
+Project:  eSDScom, https://www.esdscom.eu/
+License:  Creative Commons Attribution-NoDerivatives 4.0 International
+          (CC BY-ND 4.0), https://creativecommons.org/licenses/by-nd/4.0/legalcode
+
+The files in this directory are copies of the schema documents of the
+release above, without modification. Each file is byte-identical to the
+file of the same name at that tag. They are distributed here under the
+terms of CC BY-ND 4.0; the Apache License of the rest of this repository
+does not apply to them.
+
+The files are:
+  SDSComXML.xsd          main schema, root element DatasheetFeed
+  SDSComXMLCT.xsd        complex types
+  SDSComXMLDT.xsd        data types
+  SDSComXMLDT_GHS.xsd    GHS data types
+  SDSComXMLNE_*.xsd      national extensions (AR, AT, BR, CA, CH, DE, DK,
+                         EU, GB, JP, MX, NO, RU, TR, US); SDSComXMLCT.xsd
+                         includes all of them, so all are needed to load
+                         the schema
