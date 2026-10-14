@@ -1,14 +1,15 @@
 # Repository settings
 
 The settings of `github.com/velcure/esdscom` are configured through the
-GitHub API. This file lists them with the commands that set them, and the
-features that are not available while the repository is private.
+GitHub API. This file lists them with the commands that set them.
 
 ## Visibility
 
-The repository is private. It becomes public after the eSDScom consortium
-has confirmed in writing that the generated Go types may be published
-(see the licence section of the README).
+The repository is public.
+
+```sh
+gh api -X PATCH repos/velcure/esdscom -F private=false
+```
 
 ## Merging
 
@@ -38,23 +39,18 @@ Conventional Commits; release-please reads it.
 |---|---|
 | Secret scanning | on |
 | Secret scanning push protection | on |
+| Secret scanning validity checks | on |
+| Secret scanning non-provider patterns | on |
 | Code security (code scanning for CodeQL results) | on |
 | Dependabot alerts | on |
 | Dependabot security updates | on |
-| Private vulnerability reporting | not available while private |
+| Private vulnerability reporting | on |
 
 ```sh
-echo '{"security_and_analysis":{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"},"code_security":{"status":"enabled"}}}' \
+echo '{"security_and_analysis":{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"},"secret_scanning_validity_checks":{"status":"enabled"},"secret_scanning_non_provider_patterns":{"status":"enabled"},"code_security":{"status":"enabled"}}}' \
   | gh api -X PATCH repos/velcure/esdscom --input -
 gh api -X PUT repos/velcure/esdscom/vulnerability-alerts
 gh api -X PUT repos/velcure/esdscom/automated-security-fixes
-```
-
-Private vulnerability reporting is offered by GitHub for public repositories
-only; for this private repository the API answers `404 Not Found`. When the
-repository becomes public it is switched on with
-
-```sh
 gh api -X PUT repos/velcure/esdscom/private-vulnerability-reporting
 ```
 
@@ -70,7 +66,7 @@ actors:
 
 | Rule | Setting |
 |---|---|
-| Pull request before merging | 1 approving review, stale reviews dismissed on push, conversations resolved, squash merge only |
+| Pull request before merging | no required approving review while the repository has one maintainer, stale reviews dismissed on push, conversations resolved, squash merge only |
 | Required status checks | `CI success` (ci.yml), `Analyze (go)` (codeql.yml), `govulncheck` (govulncheck.yml); branch must be up to date |
 | Linear history | required |
 | Signed commits | required |
@@ -100,7 +96,7 @@ with `ruleset.json`:
     { "type": "required_linear_history" },
     { "type": "required_signatures" },
     { "type": "pull_request", "parameters": {
-        "required_approving_review_count": 1,
+        "required_approving_review_count": 0,
         "dismiss_stale_reviews_on_push": true,
         "require_code_owner_review": false,
         "require_last_push_approval": false,
@@ -121,10 +117,7 @@ with `ruleset.json`:
 
 ## Workflows that depend on visibility
 
-| Workflow | While private | When public |
-|---|---|---|
-| OpenSSF Scorecard | skipped: the workflow token cannot read a private repository through the GraphQL API | runs on push, weekly and on branch protection changes, publishes results and uploads SARIF |
-| release-please, job `announce to proxy.golang.org` | skipped: the Go module proxy cannot fetch private modules | requests the new version from proxy.golang.org so that pkg.go.dev lists it |
-
-The README badges for Scorecard and pkg.go.dev show data once the
-repository is public.
+| Workflow | Behaviour |
+|---|---|
+| OpenSSF Scorecard | runs on push, weekly and on branch protection changes, publishes results and uploads SARIF; skipped on a private repository |
+| release-please, job `announce to proxy.golang.org` | requests the new version from proxy.golang.org so that pkg.go.dev lists it; skipped on a private repository |
