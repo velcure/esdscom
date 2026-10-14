@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test document: no Datasheet. -->
+<!-- expect: required Datasheet -->
+<eSDScom:DatasheetFeed xmlns:eSDScom="http://www.esdscom.eu/eSDScom">
+  <InformationFromExportingSystem>
+    <SdscomVersionNo>5.5</SdscomVersionNo>
+    <Language>
+      <FreetextLanguageCode>de</FreetextLanguageCode>
+    </Language>
+    <RegulationsRelatedToCountryOrRegion>
+      <RegulationsRelatedToCountryOrRegionCode>DE</RegulationsRelatedToCountryOrRegionCode>
+    </RegulationsRelatedToCountryOrRegion>
+    <SystemUsedInPreparation>esdscom-go testdata</SystemUsedInPreparation>
+    <DateGeneratedExport>2026-10-14</DateGeneratedExport>
+  </InformationFromExportingSystem>
+</eSDScom:DatasheetFeed>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:attributeGroup name="Common">
+		<xs:attribute name="Code" type="t:Code" default="0">
+			<xs:annotation>
+				<xs:documentation>The code.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Seen" type="xs:boolean"/>
+	</xs:attributeGroup>
+	<xs:element name="Root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Code" type="string" minOccurs="0"/>
+				<xs:element name="Marker"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="t:Common"/>
+			<xs:attribute name="Inline">
+				<xs:simpleType>
+					<xs:restriction base="string">
+						<xs:enumeration value="on"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Code">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+</xs:schema>

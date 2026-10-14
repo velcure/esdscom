@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:complexType name="RegionAA">
+		<xs:sequence>
+			<xs:element name="Value" type="t:AAValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="AAValue">
+		<xs:restriction base="string"/>
+	</xs:simpleType>
+</xs:schema>

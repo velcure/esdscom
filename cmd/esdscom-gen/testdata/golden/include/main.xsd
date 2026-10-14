@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:include schemaLocation="TestNE_AA.xsd"/>
+	<xs:include schemaLocation="TestNE_BB.xsd"/>
+	<xs:element name="Root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RegionAA" type="t:RegionAA" minOccurs="0"/>
+				<xs:element name="RegionBB" type="t:RegionBB" minOccurs="0"/>
+				<xs:choice>
+					<xs:element name="OnlyAA" type="t:RegionAA"/>
+					<xs:element name="Core" type="string"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

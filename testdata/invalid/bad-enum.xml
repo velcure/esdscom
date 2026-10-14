@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test document: a value outside an enumeration. -->
+<!-- expect: enum InformationFromExportingSystem/Language/FreetextLanguageCode -->
+<eSDScom:DatasheetFeed xmlns:eSDScom="http://www.esdscom.eu/eSDScom">
+  <InformationFromExportingSystem>
+    <SdscomVersionNo>5.5</SdscomVersionNo>
+    <Language>
+      <FreetextLanguageCode>xx</FreetextLanguageCode>
+    </Language>
+    <RegulationsRelatedToCountryOrRegion>
+      <RegulationsRelatedToCountryOrRegionCode>DE</RegulationsRelatedToCountryOrRegionCode>
+    </RegulationsRelatedToCountryOrRegion>
+    <SystemUsedInPreparation>esdscom-go testdata</SystemUsedInPreparation>
+    <DateGeneratedExport>2026-10-14</DateGeneratedExport>
+  </InformationFromExportingSystem>
+  <Datasheet>
+    <IdentificationSubstPrep>
+      <TradeProductIdentity>
+        <ProductNoUser>ACME-0001</ProductNoUser>
+      </TradeProductIdentity>
+    </IdentificationSubstPrep>
+    <HazardIdentification/>
+    <Composition/>
+    <FirstAidMeasures/>
+    <FireFightingMeasures/>
+    <AccidentalReleaseMeasures/>
+    <HandlingAndStorage/>
+    <ExposureControlPersonalProtection/>
+    <PhysicalChemicalProperties/>
+    <StabilityReactivity/>
+    <ToxicologicalInformation/>
+    <EcologicalInformation/>
+    <DisposalConsiderations/>
+    <TransportInformation/>
+    <RegulatoryInformation/>
+    <OtherInformation/>
+  </Datasheet>
+</eSDScom:DatasheetFeed>

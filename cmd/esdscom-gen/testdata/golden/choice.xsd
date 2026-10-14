@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:element name="Root" type="t:Holder"/>
+	<xs:complexType name="Holder">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="A" type="string"/>
+				<xs:element name="B" type="string" maxOccurs="unbounded"/>
+				<xs:sequence>
+					<xs:element name="C" type="string"/>
+					<xs:element name="D" type="string" minOccurs="0"/>
+				</xs:sequence>
+				<xs:choice>
+					<xs:element name="E" type="string"/>
+					<xs:element name="F" type="string"/>
+				</xs:choice>
+			</xs:choice>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="G" type="string"/>
+				<xs:element name="H" type="string"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

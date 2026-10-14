@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:element name="Root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Hazard" type="t:Hazard" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Hazard">
+		<xs:union memberTypes="t:Physical t:Health"/>
+	</xs:simpleType>
+	<xs:simpleType name="Physical">
+		<xs:restriction base="string">
+			<xs:enumeration value="H200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Health">
+		<xs:restriction base="string">
+			<xs:enumeration value="H300"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

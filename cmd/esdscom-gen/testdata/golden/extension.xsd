@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:test" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:t="urn:test" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:element name="Root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Base" type="t:Base"/>
+				<xs:element name="Derived" type="t:Derived"/>
+				<xs:element name="Text" type="t:Text" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Base">
+		<xs:choice>
+			<xs:element name="X" type="string"/>
+			<xs:element name="Y" type="string"/>
+		</xs:choice>
+		<xs:attribute name="Id" type="string"/>
+	</xs:complexType>
+	<xs:complexType name="Derived">
+		<xs:complexContent>
+			<xs:extension base="t:Base">
+				<xs:sequence>
+					<xs:element name="Z" type="string" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Extra2" type="int"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Text">
+		<xs:simpleContent>
+			<xs:extension base="t:Short">
+				<xs:attribute name="Lang" type="string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Short">
+		<xs:restriction base="string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

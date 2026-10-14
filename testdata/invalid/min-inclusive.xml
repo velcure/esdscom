@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-written test document: a quantity below its minimum. -->
+<!-- expect: minInclusive Datasheet[0]/RegulatoryInformation/RegionEU/NationalLegislation/NationalLegislationGermany/Stoerfallverordnung/HealthHazards/LowerTierQuantity -->
+<eSDScom:DatasheetFeed xmlns:eSDScom="http://www.esdscom.eu/eSDScom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <InformationFromExportingSystem>
+    <SdscomVersionNo>5.5</SdscomVersionNo>
+    <SdscomSubset>SDScomChem</SdscomSubset>
+    <PhraseCatalogue PhraseCatalogueId="1">
+      <PhraseCatalogueName>Example catalogue</PhraseCatalogueName>
+      <PhraseCatalogueIssuer>Example issuer</PhraseCatalogueIssuer>
+      <PhraseCatalogueVersion>1.0</PhraseCatalogueVersion>
+      <PhraseCatalogueDate>2026-01-31</PhraseCatalogueDate>
+    </PhraseCatalogue>
+    <Language>
+      <FreetextLanguageCode>de</FreetextLanguageCode>
+      <FreetextLanguageCountryCode>DE</FreetextLanguageCountryCode>
+      <FreetextLanguageName>
+        <FullText Languange="de">Deutsch</FullText>
+      </FreetextLanguageName>
+    </Language>
+    <RegulationsRelatedToCountryOrRegion>
+      <RegulationsRelatedToCountryOrRegionCode>DE</RegulationsRelatedToCountryOrRegionCode>
+      <RegulationsRelatedToCountryOrRegionName>
+        <FullText>Deutschland</FullText>
+      </RegulationsRelatedToCountryOrRegionName>
+      <LegalDocument>
+        <LegalDocumentFileName>cleaner-de.pdf</LegalDocumentFileName>
+        <LegalDocumentPrintDate>2026-10-01</LegalDocumentPrintDate>
+      </LegalDocument>
+    </RegulationsRelatedToCountryOrRegion>
+    <SystemUsedInPreparation>esdscom-go testdata</SystemUsedInPreparation>
+    <DateGeneratedExport>2026-10-14</DateGeneratedExport>
+  </InformationFromExportingSystem>
+  <Datasheet>
+    <IdentificationSubstPrep>
+      <TradeProductIdentity>
+        <ProductNoUser>ACME-CLEAN-01</ProductNoUser>
+        <ProductNoUser>ACME-CLEAN-01-5L</ProductNoUser>
+        <ProductDefinition>
+          <FullText Languange="de">Reiniger &amp; Entfetter &lt;Industrie&gt;</FullText>
+          <FullText Languange="en">Cleaner and degreaser</FullText>
+        </ProductDefinition>
+      </TradeProductIdentity>
+      <Use PhraseId="U-001" PhraseCatalogueId="1">
+        <PhraseCode>U-001</PhraseCode>
+        <FullText>Industrielle Reinigung</FullText>
+        <MergePhrase MergePhraseNo="1">
+          <MergeText>Metalloberflächen</MergeText>
+          <Delimiter>; </Delimiter>
+        </MergePhrase>
+      </Use>
+      <Use>
+        <NewLine/>
+      </Use>
+    </IdentificationSubstPrep>
+    <HazardIdentification>
+      <RegionEU>
+        <Classification>
+          <ClpAtp14HazardClassification>
+            <Classification>
+              <HazardClassCategory>Flam. Liq. 2</HazardClassCategory>
+              <HazardClassCategoryPrintable>
+                <FullText>Entzündbare Flüssigkeiten, Kategorie 2</FullText>
+              </HazardClassCategoryPrintable>
+            </Classification>
+            <Classification>
+              <HazardClassCategory>Eye Irrit. 2</HazardClassCategory>
+              <HazardClassCategoryPrintable>
+                <NewLine/>
+              </HazardClassCategoryPrintable>
+              <ClassificationProcedure>
+                <FullText>Berechnungsmethode</FullText>
+              </ClassificationProcedure>
+            </Classification>
+          </ClpAtp14HazardClassification>
+        </Classification>
+        <HazardLabelling>
+          <ClpAtp14HazardLabelling>
+            <HazardPictogram>GHS02</HazardPictogram>
+            <SignalWord>
+              <PhraseCode>DGR</PhraseCode>
+            </SignalWord>
+            <HazardStatement>
+              <PhraseCode>225</PhraseCode>
+              <FullText>Flüssigkeit und Dampf leicht entzündbar.</FullText>
+            </HazardStatement>
+          </ClpAtp14HazardLabelling>
+        </HazardLabelling>
+      </RegionEU>
+    </HazardIdentification>
+    <Composition>
+      <RegionEU>
+        <CompositionType>Mixture</CompositionType>
+        <Component>
+          <Substance>
+            <IupacName>propan-2-ol</IupacName>
+            <CasNo>67-63-0</CasNo>
+          </Substance>
+          <Concentration>
+            <UpperValueSymbol>lt</UpperValueSymbol>
+            <UpperValue>25</UpperValue>
+            <LowerValueSymbol>ge</LowerValueSymbol>
+            <LowerValue>10</LowerValue>
+            <Unit>Weight-%</Unit>
+          </Concentration>
+        </Component>
+        <Component>
+          <Substance>
+            <IupacName>water</IupacName>
+            <CasNo>7732-18-5</CasNo>
+          </Substance>
+          <Concentration>
+            <ExactValueSymbol>ca</ExactValueSymbol>
+            <ExactValue>80</ExactValue>
+            <Unit>Weight-%</Unit>
+          </Concentration>
+        </Component>
+      </RegionEU>
+    </Composition>
+    <FirstAidMeasures/>
+    <FireFightingMeasures/>
+    <AccidentalReleaseMeasures/>
+    <HandlingAndStorage/>
+    <ExposureControlPersonalProtection/>
+    <PhysicalChemicalProperties>
+      <Appearance>
+        <Form>liquid</Form>
+        <Colour>colourless</Colour>
+      </Appearance>
+      <SafetyRelevantInformation>
+        <EvaporationRate>
+          <ReasonForWaiving>no data</ReasonForWaiving>
+        </EvaporationRate>
+      </SafetyRelevantInformation>
+    </PhysicalChemicalProperties>
+    <StabilityReactivity/>
+    <ToxicologicalInformation/>
+    <EcologicalInformation/>
+    <DisposalConsiderations/>
+    <TransportInformation/>
+    <RegulatoryInformation>
+      <RegionEU>
+        <NationalLegislation>
+          <NationalLegislationGermany>
+            <Stoerfallverordnung>
+              <HealthHazards>
+                <Code>H2</Code>
+                <LowerTierQuantity>-5</LowerTierQuantity>
+                <UpperTierQuantity>50</UpperTierQuantity>
+                <BimschNumber>4</BimschNumber>
+              </HealthHazards>
+            </Stoerfallverordnung>
+            <WaterHazardClass>
+              <Class>1</Class>
+            </WaterHazardClass>
+            <StorageClassDE>3</StorageClassDE>
+          </NationalLegislationGermany>
+          <NationalLegislationFrance>
+            <Hint xml:lang="fr">Contenu libre, non typé</Hint>
+          </NationalLegislationFrance>
+        </NationalLegislation>
+      </RegionEU>
+    </RegulatoryInformation>
+    <OtherInformation/>
+  </Datasheet>
+</eSDScom:DatasheetFeed>
