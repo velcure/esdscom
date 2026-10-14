@@ -1,0 +1,13 @@
+esdscom - eSDScom safety data sheets for Go
+Copyright 2026 Velcure
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The directory schema/ contains the eSDScom XML schema (eSDSxml, formerly
+SDScomXML), release v5.5, by the eSDScom project
+(https://www.esdscom.eu/, https://github.com/esdscom/sdscom-xml).
+The schema is licensed under the Creative Commons Attribution-NoDerivatives
+4.0 International License (CC BY-ND 4.0,
+https://creativecommons.org/licenses/by-nd/4.0/legalcode) and is included
+unchanged. The Apache License does not apply to those files. See
+schema/v5.5/NOTICE.
