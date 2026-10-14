@@ -1,0 +1,48 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard
+  enable:
+    - bodyclose
+    - copyloopvar
+    - errorlint
+    - gocritic
+    - gosec
+    - misspell
+    - nolintlint
+    - revive
+    - unconvert
+    - unparam
+  settings:
+    gosec:
+      excludes:
+        # The generator writes source files with the usual permissions.
+        - G306
+    revive:
+      rules:
+        - name: exported
+        - name: package-comments
+        - name: var-naming
+    misspell:
+      locale: US
+  exclusions:
+    generated: strict
+    presets:
+      - std-error-handling
+    rules:
+      - path: _test\.go
+        linters:
+          - gosec
+      # The particle constructors are called by generated code, which
+      # passes every combination the schema needs.
+      - path: schema\.go
+        linters:
+          - unparam
+
+formatters:
+  enable:
+    - gofmt
+    - goimports

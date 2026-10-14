@@ -1,0 +1,22 @@
+name: Schema release or national extension
+description: Request support for a new eSDScom schema release or another national extension.
+labels: [schema]
+body:
+  - type: input
+    id: release
+    attributes:
+      label: Schema release
+      description: Release tag of https://github.com/esdscom/sdscom-xml
+      placeholder: v5.6
+  - type: input
+    id: extension
+    attributes:
+      label: National extension
+      placeholder: AT, CH, GB, US …
+  - type: textarea
+    id: reason
+    attributes:
+      label: Use case
+      description: Which documents do you need to read or write?
+    validations:
+      required: true
