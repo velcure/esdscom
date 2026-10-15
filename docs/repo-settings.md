@@ -115,6 +115,40 @@ with `ruleset.json`:
 
 `integration_id` 15368 is the GitHub Actions app.
 
+## Release app
+
+release-please runs with the token of the GitHub App `velcure-release`, not
+with `GITHUB_TOKEN`: a pull request opened with `GITHUB_TOKEN` starts no
+workflows, so the release pull request would never get the required checks.
+
+| Setting | Value |
+|---|---|
+| Owner | organization `velcure` |
+| Webhook | off |
+| Repository permissions | Contents: read and write, Pull requests: read and write, Issues: read and write, Metadata: read |
+| Organization and account permissions | none |
+| Installation | only on `velcure/esdscom` |
+| Where it can be installed | only on this account |
+
+The workflow reads two settings of the organization `velcure`, visible to
+the selected repositories only:
+
+| Name | Kind | Value |
+|---|---|---|
+| `RELEASE_APP_CLIENT_ID` | Actions variable | the app's client ID |
+| `RELEASE_APP_PRIVATE_KEY` | Actions secret | a private key of the app (PEM) |
+
+```sh
+gh variable set RELEASE_APP_CLIENT_ID --org velcure --visibility selected --repos esdscom --body "<client ID>"
+gh secret set RELEASE_APP_PRIVATE_KEY --org velcure --visibility selected --repos esdscom < velcure-release.private-key.pem
+```
+
+Another repository that releases with the app is added to both lists
+(`--repos esdscom,<repo>`) and to the app's installation.
+
+The token `actions/create-github-app-token` creates is limited to the three
+permissions the job names and expires after one hour.
+
 ## Workflows that depend on visibility
 
 | Workflow | Behaviour |
