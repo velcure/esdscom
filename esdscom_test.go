@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"errors"
+	"math"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -247,6 +248,9 @@ func TestDecodeRejects(t *testing.T) {
 	}
 	if _, err := Decode(strings.NewReader(minimal), WithMaxSize(int64(len(minimal)))); err != nil {
 		t.Fatalf("input of exactly the limit: %v", err)
+	}
+	if _, err := Decode(strings.NewReader(minimal), WithMaxSize(math.MaxInt64)); err != nil {
+		t.Fatalf("largest limit: %v", err)
 	}
 }
 

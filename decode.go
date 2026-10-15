@@ -33,7 +33,7 @@ func (l *limitReader) Read(p []byte) (int, error) {
 	if l.n < 0 {
 		return 0, ErrTooLarge
 	}
-	if int64(len(p)) > l.n+1 {
+	if int64(len(p)) > l.n {
 		p = p[:l.n+1]
 	}
 	n, err := l.r.Read(p)
