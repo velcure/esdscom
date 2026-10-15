@@ -130,7 +130,8 @@ workflows, so the release pull request would never get the required checks.
 | Installation | only on `velcure/esdscom` |
 | Where it can be installed | only on this account |
 
-The workflow reads two settings of the repository:
+The workflow reads two settings of the organization `velcure`, visible to
+the selected repositories only:
 
 | Name | Kind | Value |
 |---|---|---|
@@ -138,9 +139,12 @@ The workflow reads two settings of the repository:
 | `RELEASE_APP_PRIVATE_KEY` | Actions secret | a private key of the app (PEM) |
 
 ```sh
-gh variable set RELEASE_APP_CLIENT_ID --repo velcure/esdscom --body "<client ID>"
-gh secret set RELEASE_APP_PRIVATE_KEY --repo velcure/esdscom < velcure-release.private-key.pem
+gh variable set RELEASE_APP_CLIENT_ID --org velcure --visibility selected --repos esdscom --body "<client ID>"
+gh secret set RELEASE_APP_PRIVATE_KEY --org velcure --visibility selected --repos esdscom < velcure-release.private-key.pem
 ```
+
+Another repository that releases with the app is added to both lists
+(`--repos esdscom,<repo>`) and to the app's installation.
 
 The token `actions/create-github-app-token` creates is limited to the three
 permissions the job names and expires after one hour.
