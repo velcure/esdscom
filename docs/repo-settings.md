@@ -11,6 +11,27 @@ The repository is public.
 gh api -X PATCH repos/velcure/esdscom -F private=false
 ```
 
+## Description and topics
+
+| Setting | Value |
+|---|---|
+| Description | Read, write and validate eSDScom (eSDSxml) safety data sheets (SDS/MSDS, REACH, CLP) in Go |
+| Website | https://pkg.go.dev/github.com/velcure/esdscom |
+| Topics | go, golang, go-library, esdscom, sdscom, esdsxml, safety-data-sheet, sds, msds, reach, clp, ghs, chemical-safety, hazardous-substances, occupational-safety, xml, xsd, xml-schema, sicherheitsdatenblatt, gefahrstoffe |
+
+```sh
+gh api -X PATCH repos/velcure/esdscom \
+  -f description="Read, write and validate eSDScom (eSDSxml) safety data sheets (SDS/MSDS, REACH, CLP) in Go" \
+  -f homepage="https://pkg.go.dev/github.com/velcure/esdscom"
+gh api -X PUT repos/velcure/esdscom/topics \
+  -f 'names[]=go' -f 'names[]=golang' -f 'names[]=go-library' -f 'names[]=esdscom' \
+  -f 'names[]=sdscom' -f 'names[]=esdsxml' -f 'names[]=safety-data-sheet' -f 'names[]=sds' \
+  -f 'names[]=msds' -f 'names[]=reach' -f 'names[]=clp' -f 'names[]=ghs' \
+  -f 'names[]=chemical-safety' -f 'names[]=hazardous-substances' -f 'names[]=occupational-safety' \
+  -f 'names[]=xml' -f 'names[]=xsd' -f 'names[]=xml-schema' \
+  -f 'names[]=sicherheitsdatenblatt' -f 'names[]=gefahrstoffe'
+```
+
 ## Merging
 
 | Setting | Value |
